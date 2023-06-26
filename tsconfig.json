@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "baseUrl": "./",
+    "paths": {
+      "@pages": ["pages"]
+    },
+    "outDir": "../tests-out"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "pretest": "tsc --incremental -p tests/tsconfig.json",
+    "test": "playwright test -c tests-out",
+    "test:run" : "pretest || test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.35.1"
+  }
+}
