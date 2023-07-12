@@ -28,6 +28,7 @@ jobs:
           retention-days: 30
 
       - name: test
+        if: always() 
         run: echo "${{ env.GITHUB_BASE_REF }}"
 
       - name: Publish HTML report
