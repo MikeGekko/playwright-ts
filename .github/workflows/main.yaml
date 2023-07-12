@@ -33,7 +33,7 @@ jobs:
         # if: ${{github.ref == 'refs/heads/master'}}
 
       - name: Publish HTML report
-        if: ${{github.ref == 'refs/heads/master'}}
+        if: ${{github.ref == 'refs/heads/master' && success() || failure() }}
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.DEPLOY_TOKEN }}
