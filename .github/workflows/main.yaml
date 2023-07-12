@@ -29,7 +29,7 @@ jobs:
 
       - name: test
         if: always() 
-        run: echo github.branch
+        run: echo "branch=${GITHUB_HEAD_REF}"
 
       - name: Publish HTML report
         if: always() && 'github.branch' == 'master'
