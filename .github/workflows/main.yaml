@@ -26,3 +26,13 @@ jobs:
           name: report
           path: reports/**
           retention-days: 30
+
+      - name: test
+        run: echo "${{ env.GITHUB_BASE_REF }}"
+
+      - name: Publish HTML report
+        if: always() && ${{ env.GITHUB_BASE_REF }} == 'master'
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          publish_branch: report
