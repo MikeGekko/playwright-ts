@@ -28,7 +28,7 @@ jobs:
           retention-days: 30
 
       - name: Publish HTML report
-        if: ${{ env.GITHUB_BASE_REF }} == 'master'
+        if: always() && ${{ env.GITHUB_BASE_REF }} == 'master'
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.DEPLOY_TOKEN }}
