@@ -30,9 +30,10 @@ jobs:
       - name: test
         if: always() 
         run: echo "branch=${GITHUB_HEAD_REF}"
+        # if: ${{github.ref == 'refs/heads/master'}}
 
       - name: Publish HTML report
-        if: always() && 'github.branch' == 'master'
+        if: ${{github.ref == 'refs/heads/master'}}
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.DEPLOY_TOKEN }}
