@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          npx playwright install chrome --with-deps
+          npx playwright install chromium --with-deps
 
       - name: Run tests
         run: npm test
@@ -38,4 +38,4 @@ jobs:
         with:
           github_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_branch: report
-          publish_dir: ./reports
+          publish_dir: ./reports/report
