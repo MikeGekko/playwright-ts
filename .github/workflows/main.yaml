@@ -1,9 +1,9 @@
 name: E2E test
 on:
   push:
-    branches: ["**"]
+    branches: ['**']
   pull_request:
-    branches: ["**"]
+    branches: ['**']
 jobs:
   test:
     timeout-minutes: 60
@@ -14,9 +14,9 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        run: | 
+        run: |
           npm install
-          npx playwright install chromium --with-deps
+          npx playwright install chrome --with-deps
 
       - name: Run tests
         run: npm test
@@ -26,3 +26,10 @@ jobs:
           name: report
           path: reports/**
           retention-days: 30
+
+      - name: Publish HTML report
+        if: ${{ env.GITHUB_BASE_REF }} == 'master'
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          publish_branch: report
