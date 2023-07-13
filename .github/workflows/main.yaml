@@ -18,7 +18,6 @@ jobs:
         run: |
           npm install
           npx playwright install chromium --with-deps
-
       - name: Run tests
         run: npm test
       - uses: actions/upload-artifact@v3
@@ -27,12 +26,6 @@ jobs:
           name: report
           path: reports/**
           retention-days: 30
-
-      - name: test
-        if: always() 
-        run: echo "branch=${GITHUB_HEAD_REF}"
-        # if: ${{github.ref == 'refs/heads/master'}}
-
       - name: Publish HTML report
         if: ${{github.ref == 'refs/heads/master' && success() || failure() }}
         uses: peaceiris/actions-gh-pages@v3.7.3

@@ -3,7 +3,7 @@ Pet project using Playwright + Typescript
 
 # HTML Report
 
-https://mikegekko.github.io/playwright-ts-eslint/
+https://mikegekko.github.io/playwright-ts-eslint-gh-actions/
 
 # Setup
 
