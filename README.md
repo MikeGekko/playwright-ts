@@ -16,7 +16,8 @@ https://mikegekko.github.io/playwright-ts-eslint-gh-actions/
 Install project dependencies using: npm i
 
 ## DOTENV
-WARNING!!! This is only for example, do not add your sensitive data to the README file
+**WARNING!!! This is only for example, do not add your sensitive data to the README file**
+
 Add .env file into the root directory and fill the next strings
 ```
 URL="https://www.saucedemo.com/"
