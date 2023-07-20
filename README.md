@@ -18,7 +18,7 @@ Install project dependencies using: npm i
 ## DOTENV
 **WARNING!!! This is only for example, do not add your sensitive data to the README file**
 
-Add .env file into the root directory and fill the next strings
+Create .env file into the root directory and fill the next strings
 ```
 URL="https://www.saucedemo.com/"
 STANDARD_USER="standard_user"
