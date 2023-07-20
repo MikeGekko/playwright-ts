@@ -5,6 +5,9 @@ on:
   pull_request:
     branches: ['**']
   workflow_dispatch:
+env:
+  STANDARD_USER: ${{ secrets.STANDARD_USER }}
+  USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
 jobs:
   test:
     timeout-minutes: 60

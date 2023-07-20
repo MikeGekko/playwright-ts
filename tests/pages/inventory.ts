@@ -3,13 +3,18 @@ import { Locator, Page } from '@playwright/test';
 
 export default class InventoryPage extends BasePage {
   public backpack_item: Locator;
-  readonly burger_menu: Locator;
-  readonly add_to_card: Locator;
+  public burger_menu: Locator;
+  public add_to_card: Locator;
 
   constructor(page: Page) {
     super(page);
-    this.burger_menu = this.page.locator('[id="react-burger-menu-btn"]');
-    this.add_to_card = this.page.locator('button[data-test*="add-to-cart"]');
+    this.setPage = page;
+  }
+
+  set setPage(page: Page) {
+    this.page = page;
+    this.burger_menu = page.locator('[id="react-burger-menu-btn"]');
+    this.add_to_card = page.locator('button[data-test*="add-to-cart"]');
   }
 
   set set_backpack_item(product: string) {

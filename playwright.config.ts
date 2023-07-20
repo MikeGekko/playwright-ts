@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+import 'dotenv/config'
+import { configuration } from 'env/config';
 
 export default defineConfig({
   testDir: './tests/specs/',
@@ -20,7 +22,7 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: 'https://www.saucedemo.com/',
+    baseURL: configuration.URL,
     viewport: { width: 1920, height: 1080 },
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',

@@ -18,6 +18,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
+    "@typescript-eslint/no-floating-promises": "error",
     'playwright/no-restricted-matchers': [
       'warn',
       {
